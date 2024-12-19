@@ -4,55 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Panel - Tenzx Store</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: #f7f7f7;
       margin: 0;
-      background: #f4f4f9;
       padding: 20px;
     }
 
     h1 {
+      color: #333;
       font-size: 2rem;
       margin-bottom: 20px;
     }
 
     form {
       background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s ease;
-    }
-
-    form:hover {
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
 
     label {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 10px;
       display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
     }
 
     input, textarea {
       width: 100%;
       padding: 12px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
       border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      margin-bottom: 20px;
       transition: border-color 0.3s ease;
     }
 
     input:focus, textarea:focus {
       border-color: #00b0ff;
+      outline: none;
     }
 
     button {
-      padding: 12px 24px;
+      padding: 12px 25px;
       background: #00b0ff;
-      color: #fff;
+      color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -60,37 +59,56 @@
     }
 
     button:hover {
-      background: #0088cc;
+      background: #0091cc;
+    }
+
+    .message {
+      margin-top: 20px;
+      padding: 15px;
+      background: #e1f5fe;
+      border: 1px solid #81d4fa;
+      border-radius: 5px;
+      color: #0288d1;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
+
   <h1>Admin Panel - Add New App</h1>
   <form id="appForm">
-    <label for="name">App Name:</label>
-    <input type="text" id="name" name="name" required>
+    <label for="appName">App Name:</label>
+    <input type="text" id="appName" name="appName" required>
 
-    <label for="description">Description:</label>
-    <textarea id="description" name="description" required></textarea>
+    <label for="appDescription">App Description:</label>
+    <textarea id="appDescription" name="appDescription" required></textarea>
 
-    <label for="image">Image URL:</label>
-    <input type="text" id="image" name="image" required>
+    <label for="appImage">Image URL:</label>
+    <input type="text" id="appImage" name="appImage" required>
 
     <button type="submit">Add App</button>
   </form>
 
+  <div class="message" style="display:none;">
+    App has been successfully added!
+  </div>
+
   <script>
-    const form = document.getElementById('appForm');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const app = {
-        name: form.name.value,
-        description: form.description.value,
-        image: form.image.value
-      };
-      console.log(app);  // In a real implementation, this would save to a backend.
-      alert('App added to store!');
+    document.getElementById('appForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const appName = document.getElementById('appName').value;
+      const appDescription = document.getElementById('appDescription').value;
+      const appImage = document.getElementById('appImage').value;
+
+      // Simulating a real backend action
+      console.log(`App Added: ${appName} - ${appDescription} - ${appImage}`);
+
+      document.querySelector('.message').style.display = 'block';
+
+      // Clear form fields after submission
+      document.getElementById('appForm').reset();
     });
   </script>
+
 </body>
 </html>
