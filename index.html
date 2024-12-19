@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading - Tenzx Store</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #2f2f2f;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cube {
+      width: 80px;
+      height: 80px;
+      background-color: #00b0ff;
+      margin-bottom: 20px;
+      animation: rotateCube 2s infinite linear;
+      border-radius: 5px;
+    }
+
+    @keyframes rotateCube {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(180deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .progress-bar {
+      width: 200px;
+      height: 5px;
+      background-color: #ccc;
+      margin-top: 30px;
+    }
+
+    .progress {
+      width: 0;
+      height: 100%;
+      background-color: #00b0ff;
+      animation: loadProgress 5s forwards;
+    }
+
+    @keyframes loadProgress {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-container">
+    <div class="cube"></div>
+    <h1>Loading Tenzx Store...</h1>
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "store.html"; // Redirect to store page after 5 seconds
+    }, 5000);
+  </script>
+</body>
+</html>

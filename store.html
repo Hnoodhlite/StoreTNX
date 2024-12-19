@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenzx Store</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background: #f4f4f9;
+    }
+
+    header {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    header nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #00b0ff;
+    }
+
+    #hero {
+      background: #1e1e2f;
+      color: #fff;
+      padding: 60px;
+      text-align: center;
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .cta-button {
+      background: #00b0ff;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #0088cc;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      animation: fadeInGrid 1.5s ease-in-out;
+    }
+
+    @keyframes fadeInGrid {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .app-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .app-card img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .app-card img:hover {
+      transform: scale(1.1);
+    }
+
+    .category {
+      background: #1e1e2f;
+      color: #fff;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .category:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tenzx Store</h1>
+    <nav>
+      <a href="#featured">Featured</a>
+      <a href="#categories">Categories</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Discover Your Next Favorite App</h2>
+    <a href="#featured" class="cta-button">Explore Apps</a>
+  </section>
+
+  <section id="featured">
+    <h2>Featured Apps</h2>
+    <div class="apps-grid">
+      <div class="app-card">
+        <img src="https://via.placeholder.com/200" alt="App 1">
+        <h3>App One</h3>
+        <p>A description of app one.</p>
+      </div>
+      <div class="app-card">
+        <img src="https://via.placeholder.com/200" alt="App 2">
+        <h3>App Two</h3>
+        <p>A description of app two.</p>
+      </div>
+      <!-- More apps here -->
+    </div>
+  </section>
+
+  <section id="categories">
+    <h2>Browse by Category</h2>
+    <div class="categories-grid">
+      <div class="category">Games</div>
+      <div class="category">Productivity</div>
+      <div class="category">Health</div>
+      <div class="category">Education</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Tenzx Store. All rights reserved.</p>
+  </footer>
+</body>
+</html>
