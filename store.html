@@ -8,115 +8,179 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #121212;
       margin: 0;
       padding: 0;
+      background-color: #121212;
       color: white;
     }
+
     header {
-      background-color: #1c1c1c;
+      background-color: #1f1f1f;
       padding: 20px;
       text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
+
     header h1 {
       color: #00b0ff;
+      margin: 0;
     }
-    header nav {
-      margin-top: 15px;
+
+    .nav-links {
+      margin-top: 20px;
     }
-    header nav a {
-      color: #fff;
-      padding: 10px 20px;
+
+    .nav-links a {
+      color: white;
+      padding: 12px 20px;
+      margin: 0 10px;
       text-decoration: none;
-      font-size: 16px;
       border-radius: 5px;
-      transition: background 0.3s;
-    }
-    header nav a:hover {
       background-color: #00b0ff;
+      font-size: 16px;
+      transition: all 0.3s;
     }
-    .app-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 30px;
-      margin: 40px;
+
+    .nav-links a:hover {
+      background-color: #0090cc;
     }
+
+    .search-bar {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .search-bar input {
+      padding: 12px 20px;
+      width: 60%;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .search-bar button {
+      background-color: #00b0ff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+
+    .search-bar button:hover {
+      background-color: #0090cc;
+    }
+
+    .app-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
     .app-card {
       background-color: #333;
       padding: 20px;
-      border-radius: 10px;
+      width: 250px;
+      border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s;
+      transition: transform 0.3s ease-in-out;
     }
-    .app-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
+
     .app-card img {
       width: 100%;
       border-radius: 8px;
-      max-height: 200px;
-      object-fit: cover;
     }
+
+    .app-card:hover {
+      transform: scale(1.05);
+    }
+
     .app-card h3 {
-      margin-top: 20px;
+      margin-top: 10px;
       font-size: 18px;
+      color: #00b0ff;
     }
-    .app-card .btn {
-      background-color: #00b0ff;
-      padding: 10px 20px;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
+
+    .app-card p {
+      font-size: 14px;
+      color: #bbb;
     }
-    .app-card .btn:hover {
-      background-color: #0090cc;
-    }
+
     footer {
-      background-color: #1c1c1c;
+      background-color: #1f1f1f;
       padding: 20px;
       text-align: center;
+      color: white;
     }
-    footer p {
-      color: #aaa;
+
+    footer a {
+      color: #00b0ff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Tenzx App Store</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="admin.html">Admin Panel</a>
-    </nav>
-  </header>
-
-  <div class="container">
-    <h2>Available Apps</h2>
-    <div class="app-grid">
-      <!-- App 1 -->
-      <div class="app-card">
-        <img src="app1.jpg" alt="App 1">
-        <h3>App 1</h3>
-        <p>Best app for managing your files with ease.</p>
-        <button class="btn">Download</button>
-      </div>
-      <!-- App 2 -->
-      <div class="app-card">
-        <img src="app2.jpg" alt="App 2">
-        <h3>App 2</h3>
-        <p>Get the best experience in task management.</p>
-        <button class="btn">Download</button>
-      </div>
-    </div>
+<header>
+  <h1>Tenzx App Store</h1>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Categories</a>
+    <a href="#">Contact</a>
   </div>
+</header>
 
-  <footer>
-    <p>&copy; 2024 Tenzx. All rights reserved.</p>
-  </footer>
+<div class="search-bar">
+  <input type="text" id="searchBox" placeholder="Search apps...">
+  <button onclick="searchApps()">Search</button>
+</div>
+
+<div class="app-container" id="appContainer">
+  <div class="app-card">
+    <img src="https://via.placeholder.com/250x150" alt="App 1">
+    <h3>App Name 1</h3>
+    <p>Short description of the app.</p>
+  </div>
+  <div class="app-card">
+    <img src="https://via.placeholder.com/250x150" alt="App 2">
+    <h3>App Name 2</h3>
+    <p>Short description of the app.</p>
+  </div>
+  <div class="app-card">
+    <img src="https://via.placeholder.com/250x150" alt="App 3">
+    <h3>App Name 3</h3>
+    <p>Short description of the app.</p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 Tenzx App Store | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</footer>
+
+<script>
+  function searchApps() {
+    let searchTerm = document.getElementById('searchBox').value.toLowerCase();
+    let apps = document.querySelectorAll('.app-card');
+    
+    apps.forEach(function(app) {
+      let appName = app.querySelector('h3').textContent.toLowerCase();
+      if (appName.includes(searchTerm)) {
+        app.style.display = 'block';
+      } else {
+        app.style.display = 'none';
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
